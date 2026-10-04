@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 import { useRouter } from "next/navigation";
-import DeleteModal from "../modals/DeleteModal";
+import DeleteModal from "@/components/admin/modals/DeleteModal";
 
 interface Props {
   id: number;
