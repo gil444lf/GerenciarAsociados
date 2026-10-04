@@ -1,0 +1,41 @@
+generator client {
+  provider = "prisma-client"
+  output   = "../generated/prisma"
+}
+
+datasource db {
+  provider = "postgresql"
+}
+
+model Solicitud {
+  id        Int      @id @default(autoincrement())
+  email     String
+  nombre    String
+  telefono  String
+  servicio  String
+  mensaje   String
+  estado    String   @default("Pendiente")
+  createdAt DateTime @default(now())
+}
+
+model Cita {
+  id        Int      @id @default(autoincrement())
+  nombre    String
+  email     String
+  telefono  String
+  servicio  String
+  fecha     DateTime
+  mensaje   String?
+  estado    String   @default("Pendiente")
+  createdAt DateTime @default(now())
+}
+
+model Cliente {
+  id        Int      @id @default(autoincrement())
+  nombre    String
+  email     String
+  telefono  String
+  empresa   String?
+  estado    String   @default("Activo")
+  createdAt DateTime @default(now())
+}
